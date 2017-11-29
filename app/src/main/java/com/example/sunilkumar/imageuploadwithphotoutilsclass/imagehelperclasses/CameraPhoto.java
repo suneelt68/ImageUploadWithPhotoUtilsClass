@@ -49,7 +49,10 @@ public class CameraPhoto {
 
        String fileName = "JPEG_" + timeStamp + "_";
         File storageDir = Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_PICTURES);
+                "TestFolder"+File.separator+"Images");
+        if (!storageDir.exists()){
+            storageDir.mkdirs();
+        }
         File image = File.createTempFile(
                 fileName,  /* prefix */
                 ".jpg",         /* suffix */
